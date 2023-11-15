@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/Appbar/bindings/appbar_binding.dart';
+import '../modules/Appbar/views/appbar_view.dart';
 import '../modules/BottomBar/bindings/bottom_bar_binding.dart';
 import '../modules/BottomBar/views/bottom_bar_view.dart';
 import '../modules/Game/bindings/game_binding.dart';
@@ -85,6 +87,13 @@ class AppPages {
       name: _Paths.LANGKAH,
       page: () => LangkahView(),
       binding: LangkahBinding(),
+    ),
+    GetPage(
+      name: _Paths.APPBAR,
+      page: () => AppbarView(
+        back: false,
+      ),
+      binding: AppbarBinding(),
     ),
   ];
 }

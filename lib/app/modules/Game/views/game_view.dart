@@ -1,3 +1,4 @@
+import 'package:agrosim/app/modules/Appbar/views/appbar_view.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -9,9 +10,8 @@ class GameView extends GetView<GameController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('GameView'),
-        centerTitle: true,
+      appBar: AppbarView(
+        back: false,
       ),
       body: const Center(
         child: Text(

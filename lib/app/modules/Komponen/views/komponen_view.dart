@@ -1,3 +1,4 @@
+import 'package:agrosim/app/modules/Appbar/views/appbar_view.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -24,31 +25,8 @@ class KomponenView extends GetView<KomponenController> {
     final h = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Color(0xffEBE4D1),
-      appBar: AppBar(
-        backgroundColor: Color(0xffEBE4D1),
-        automaticallyImplyLeading: false,
-        centerTitle: true,
-        leading: IconButton(
-            onPressed: () {
-              Get.back();
-            },
-            icon: Icon(
-              Icons.arrow_back,
-              color: Color(0xffE53E34),
-            )),
-        elevation: 0,
-        actions: <Widget>[
-          IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.volume_up_outlined,
-                color: Color(0xffE53E34),
-              ))
-        ],
-        title: Text(
-          'AGROSIM',
-          style: GoogleFonts.alfaSlabOne(color: Color(0xffE53E34)),
-        ),
+      appBar: AppbarView(
+        back: true,
       ),
       body: SafeArea(
         child: Column(

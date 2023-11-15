@@ -14,6 +14,7 @@ abstract class Routes {
   static const PENGERTIAN = _Paths.PENGERTIAN;
   static const KOMPONEN = _Paths.KOMPONEN;
   static const LANGKAH = _Paths.LANGKAH;
+  static const APPBAR = _Paths.APPBAR;
 }
 
 abstract class _Paths {
@@ -29,4 +30,5 @@ abstract class _Paths {
   static const PENGERTIAN = '/pengertian';
   static const KOMPONEN = '/komponen';
   static const LANGKAH = '/langkah';
+  static const APPBAR = '/appbar';
 }

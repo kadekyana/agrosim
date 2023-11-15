@@ -1,3 +1,4 @@
+import 'package:agrosim/app/modules/Appbar/views/appbar_view.dart';
 import 'package:agrosim/app/modules/Komponen/views/komponen_view.dart';
 import 'package:agrosim/app/modules/Langkah/views/langkah_view.dart';
 import 'package:agrosim/app/modules/Pengertian/views/pengertian_view.dart';
@@ -15,31 +16,8 @@ class KnowledgeView extends GetView<KnowledgeController> {
     final h = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Color(0xffEBE4D1),
-      appBar: AppBar(
-        backgroundColor: Color(0xffEBE4D1),
-        automaticallyImplyLeading: false,
-        centerTitle: true,
-        elevation: 0,
-        leading: IconButton(
-            onPressed: () {
-              Get.back();
-            },
-            icon: Icon(
-              Icons.arrow_back,
-              color: Color(0xffE53E34),
-            )),
-        actions: <Widget>[
-          IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.volume_up_outlined,
-                color: Color(0xffE53E34),
-              ))
-        ],
-        title: Text(
-          'AGROSIM',
-          style: GoogleFonts.alfaSlabOne(color: Color(0xffE53E34)),
-        ),
+      appBar: AppbarView(
+        back: true,
       ),
       body: SafeArea(
         child: Column(

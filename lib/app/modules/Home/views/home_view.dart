@@ -1,6 +1,8 @@
+import 'package:agrosim/app/modules/Appbar/views/appbar_view.dart';
 import 'package:agrosim/app/modules/Knowledge/views/knowledge_view.dart';
 import 'package:agrosim/app/modules/Simulation/views/simulation_view.dart';
 import 'package:agrosim/app/modules/Video/views/video_view.dart';
+import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -8,31 +10,22 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../controllers/home_controller.dart';
 
-class HomeView extends GetView<HomeController> {
+class HomeView extends StatefulWidget {
   const HomeView({Key? key}) : super(key: key);
+
+  @override
+  State<HomeView> createState() => _HomeViewState();
+}
+
+class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     final w = MediaQuery.of(context).size.width;
     final h = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Color(0xffEBE4D1),
-      appBar: AppBar(
-        backgroundColor: Color(0xffEBE4D1),
-        automaticallyImplyLeading: false,
-        centerTitle: true,
-        elevation: 0,
-        actions: <Widget>[
-          IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.volume_up_outlined,
-                color: Color(0xffE53E34),
-              ))
-        ],
-        title: Text(
-          'AGROSIM',
-          style: GoogleFonts.alfaSlabOne(color: Color(0xffE53E34)),
-        ),
+      appBar: AppbarView(
+        back: false,
       ),
       body: SafeArea(
         child: Column(
