@@ -24,6 +24,8 @@ import '../modules/Statistic/bindings/statistic_binding.dart';
 import '../modules/Statistic/views/statistic_view.dart';
 import '../modules/Video/bindings/video_binding.dart';
 import '../modules/Video/views/video_view.dart';
+import '../modules/VideoPlayer/bindings/video_player_binding.dart';
+import '../modules/VideoPlayer/views/video_player_view.dart';
 
 part 'app_routes.dart';
 
@@ -50,7 +52,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.VIDEO,
-      page: () => const VideoView(),
+      page: () => VideoView(),
       binding: VideoBinding(),
     ),
     GetPage(
@@ -94,6 +96,13 @@ class AppPages {
         back: false,
       ),
       binding: AppbarBinding(),
+    ),
+    GetPage(
+      name: _Paths.VIDEO_PLAYER,
+      page: () => VideoPlayerView(
+        videoUrl: '',
+      ),
+      binding: VideoPlayerBinding(),
     ),
   ];
 }

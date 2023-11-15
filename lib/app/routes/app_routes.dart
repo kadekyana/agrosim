@@ -15,6 +15,7 @@ abstract class Routes {
   static const KOMPONEN = _Paths.KOMPONEN;
   static const LANGKAH = _Paths.LANGKAH;
   static const APPBAR = _Paths.APPBAR;
+  static const VIDEO_PLAYER = _Paths.VIDEO_PLAYER;
 }
 
 abstract class _Paths {
@@ -31,4 +32,5 @@ abstract class _Paths {
   static const KOMPONEN = '/komponen';
   static const LANGKAH = '/langkah';
   static const APPBAR = '/appbar';
+  static const VIDEO_PLAYER = '/video-player';
 }
