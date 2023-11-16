@@ -12,10 +12,14 @@ import '../modules/Knowledge/bindings/knowledge_binding.dart';
 import '../modules/Knowledge/views/knowledge_view.dart';
 import '../modules/Komponen/bindings/komponen_binding.dart';
 import '../modules/Komponen/views/komponen_view.dart';
+import '../modules/Kuis/bindings/kuis_binding.dart';
+import '../modules/Kuis/views/kuis_view.dart';
 import '../modules/Langkah/bindings/langkah_binding.dart';
 import '../modules/Langkah/views/langkah_view.dart';
 import '../modules/OnBoarding/bindings/on_boarding_binding.dart';
 import '../modules/OnBoarding/views/on_boarding_view.dart';
+import '../modules/PenanamanJeruk/bindings/penanaman_jeruk_binding.dart';
+import '../modules/PenanamanJeruk/views/penanaman_jeruk_view.dart';
 import '../modules/Pengertian/bindings/pengertian_binding.dart';
 import '../modules/Pengertian/views/pengertian_view.dart';
 import '../modules/Simulation/bindings/simulation_binding.dart';
@@ -103,6 +107,16 @@ class AppPages {
         videoUrl: '',
       ),
       binding: VideoPlayerBinding(),
+    ),
+    GetPage(
+      name: _Paths.PENANAMAN_JERUK,
+      page: () => const PenanamanJerukView(),
+      binding: PenanamanJerukBinding(),
+    ),
+    GetPage(
+      name: _Paths.KUIS,
+      page: () => const KuisView(),
+      binding: KuisBinding(),
     ),
   ];
 }

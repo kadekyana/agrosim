@@ -16,6 +16,8 @@ abstract class Routes {
   static const LANGKAH = _Paths.LANGKAH;
   static const APPBAR = _Paths.APPBAR;
   static const VIDEO_PLAYER = _Paths.VIDEO_PLAYER;
+  static const PENANAMAN_JERUK = _Paths.PENANAMAN_JERUK;
+  static const KUIS = _Paths.KUIS;
 }
 
 abstract class _Paths {
@@ -33,4 +35,6 @@ abstract class _Paths {
   static const LANGKAH = '/langkah';
   static const APPBAR = '/appbar';
   static const VIDEO_PLAYER = '/video-player';
+  static const PENANAMAN_JERUK = '/penanaman-jeruk';
+  static const KUIS = '/kuis';
 }

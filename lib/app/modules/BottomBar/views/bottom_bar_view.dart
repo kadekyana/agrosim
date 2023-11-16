@@ -25,9 +25,9 @@ class BottomBarView extends GetView<BottomBarController> {
       }),
       bottomNavigationBar: Obx(
         () => SalomonBottomBar(
-          selectedItemColor: Colors.white,
-          unselectedItemColor: Colors.white,
-          backgroundColor: Color(0xffFF6000),
+          selectedItemColor: Color(0xffFF6000),
+          unselectedItemColor: Color(0xffFF6000),
+          backgroundColor: Color(0xffEBE4D1),
           currentIndex: selectedIndex.value,
           onTap: (index) => selectedIndex.value = index,
           items: [
