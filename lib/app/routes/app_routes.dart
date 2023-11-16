@@ -18,6 +18,7 @@ abstract class Routes {
   static const VIDEO_PLAYER = _Paths.VIDEO_PLAYER;
   static const PENANAMAN_JERUK = _Paths.PENANAMAN_JERUK;
   static const KUIS = _Paths.KUIS;
+  static const SCORE = _Paths.SCORE;
 }
 
 abstract class _Paths {
@@ -37,4 +38,5 @@ abstract class _Paths {
   static const VIDEO_PLAYER = '/video-player';
   static const PENANAMAN_JERUK = '/penanaman-jeruk';
   static const KUIS = '/kuis';
+  static const SCORE = '/score';
 }

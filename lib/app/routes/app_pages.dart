@@ -22,6 +22,8 @@ import '../modules/PenanamanJeruk/bindings/penanaman_jeruk_binding.dart';
 import '../modules/PenanamanJeruk/views/penanaman_jeruk_view.dart';
 import '../modules/Pengertian/bindings/pengertian_binding.dart';
 import '../modules/Pengertian/views/pengertian_view.dart';
+import '../modules/Score/bindings/score_binding.dart';
+import '../modules/Score/views/score_view.dart';
 import '../modules/Simulation/bindings/simulation_binding.dart';
 import '../modules/Simulation/views/simulation_view.dart';
 import '../modules/Statistic/bindings/statistic_binding.dart';
@@ -115,8 +117,13 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.KUIS,
-      page: () => const KuisView(),
+      page: () => KuisView(),
       binding: KuisBinding(),
+    ),
+    GetPage(
+      name: _Paths.SCORE,
+      page: () => ScoreView(),
+      binding: ScoreBinding(),
     ),
   ];
 }
