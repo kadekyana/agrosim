@@ -18,6 +18,8 @@ import '../modules/Langkah/bindings/langkah_binding.dart';
 import '../modules/Langkah/views/langkah_view.dart';
 import '../modules/OnBoarding/bindings/on_boarding_binding.dart';
 import '../modules/OnBoarding/views/on_boarding_view.dart';
+import '../modules/PembahasanKuis/bindings/pembahasan_kuis_binding.dart';
+import '../modules/PembahasanKuis/views/pembahasan_kuis_view.dart';
 import '../modules/PenanamanJeruk/bindings/penanaman_jeruk_binding.dart';
 import '../modules/PenanamanJeruk/views/penanaman_jeruk_view.dart';
 import '../modules/Pengertian/bindings/pengertian_binding.dart';
@@ -124,6 +126,13 @@ class AppPages {
       name: _Paths.SCORE,
       page: () => ScoreView(),
       binding: ScoreBinding(),
+    ),
+    GetPage(
+      name: _Paths.PEMBAHASAN_KUIS,
+      page: () => PembahasanKuisView(
+        questions: [],
+      ),
+      binding: PembahasanKuisBinding(),
     ),
   ];
 }

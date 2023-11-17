@@ -35,11 +35,17 @@ class KuisController extends GetxController {
         correctIndex: 1,
         explanation:
             '1. Jawaban Benar : Sabit - Karena sabit tidak digunakan dalam proses penanaman tanaman jeruk'),
+    Question(
+        text: 'Apa saja kandungan yang terdapat dalam jeruk ?',
+        options: ['Semua Salah', 'Vitamin C', 'Semua Benar', 'Pestisida'],
+        correctIndex: 1,
+        explanation:
+            '1. Jawaban Benar : Sabit - Karena sabit tidak digunakan dalam proses penanaman tanaman jeruk'),
   ].obs;
 
   void answerQuestion(int selectedIndex) {
     if (selectedIndex == question[currentIndex.value].correctIndex) {
-      score.value += 1;
+      score.value += 20;
     }
 
     moveToNextQuestion();

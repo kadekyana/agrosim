@@ -19,6 +19,7 @@ abstract class Routes {
   static const PENANAMAN_JERUK = _Paths.PENANAMAN_JERUK;
   static const KUIS = _Paths.KUIS;
   static const SCORE = _Paths.SCORE;
+  static const PEMBAHASAN_KUIS = _Paths.PEMBAHASAN_KUIS;
 }
 
 abstract class _Paths {
@@ -39,4 +40,5 @@ abstract class _Paths {
   static const PENANAMAN_JERUK = '/penanaman-jeruk';
   static const KUIS = '/kuis';
   static const SCORE = '/score';
+  static const PEMBAHASAN_KUIS = '/pembahasan-kuis';
 }
