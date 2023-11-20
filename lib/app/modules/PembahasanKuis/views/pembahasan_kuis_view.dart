@@ -1,10 +1,12 @@
 import 'package:agrosim/app/modules/BottomBar/views/bottom_bar_view.dart';
 import 'package:agrosim/app/modules/Kuis/controllers/kuis_controller.dart';
 import 'package:agrosim/app/modules/Kuis/views/question.dart';
+import 'package:agrosim/sql_helper.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/intl.dart';
 
 import '../controllers/pembahasan_kuis_controller.dart';
 
@@ -38,10 +40,18 @@ class PembahasanKuisView extends GetView<PembahasanKuisController> {
                     Color(0xffFF6000),
                   ),
                 ),
-                onPressed: () {
-                  kuisController.currentIndex.value = 0;
-                  kuisController.score.value = 0;
-                  Get.to(BottomBarView());
+                onPressed: () async {
+                  //Simpan score
+                  DateTime tanggal = DateTime.now();
+                  String timestamp = DateFormat('yyyy-MM-dd').format(tanggal);
+                  int score = kuisController.score.value;
+                  await SQLHelper.resultScore(score, timestamp);
+                  Future.delayed(Duration(seconds: 3), () {
+                    kuisController.currentIndex.value = 0;
+                    kuisController.score.value = 0;
+                    Get.snackbar('Success', 'Berhasil Simpan Score');
+                    Get.to(BottomBarView());
+                  });
                 },
                 child: Text(
                   'END',
@@ -66,13 +76,21 @@ class PembahasanKuisView extends GetView<PembahasanKuisController> {
                     return Card(
                       margin: EdgeInsets.all(8.0),
                       child: ListTile(
-                        title: Text('Pertanyaan: ${question.text}'),
+                        title: Text(
+                          'Pertanyaan: ${question.text}',
+                          style: GoogleFonts.alfaSlabOne(),
+                        ),
                         subtitle: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                                'Jawaban Benar: ${question.options[question.correctIndex]}'),
-                            Text('Penjelasan: ${question.explanation}'),
+                              'Jawaban Benar: ${question.options[question.correctIndex]}',
+                              style: GoogleFonts.breeSerif(),
+                            ),
+                            Text(
+                              'Penjelasan: ${question.explanation}',
+                              style: GoogleFonts.breeSerif(),
+                            ),
                           ],
                         ),
                       ),
