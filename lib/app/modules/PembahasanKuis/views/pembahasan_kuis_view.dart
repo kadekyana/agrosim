@@ -3,11 +3,9 @@ import 'package:agrosim/app/modules/Kuis/controllers/kuis_controller.dart';
 import 'package:agrosim/app/modules/Kuis/views/question.dart';
 import 'package:agrosim/sql_helper.dart';
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
-
 import '../controllers/pembahasan_kuis_controller.dart';
 
 class PembahasanKuisView extends GetView<PembahasanKuisController> {
@@ -49,6 +47,7 @@ class PembahasanKuisView extends GetView<PembahasanKuisController> {
                   Future.delayed(Duration(seconds: 3), () {
                     kuisController.currentIndex.value = 0;
                     kuisController.score.value = 0;
+                    kuisController.onClose();
                     Get.snackbar('Success', 'Berhasil Simpan Score');
                     Get.to(BottomBarView());
                   });

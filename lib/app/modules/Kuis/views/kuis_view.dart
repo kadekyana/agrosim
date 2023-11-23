@@ -1,3 +1,4 @@
+import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -8,6 +9,7 @@ import '../controllers/kuis_controller.dart';
 class KuisView extends GetView<KuisController> {
   KuisView({Key? key}) : super(key: key);
   final KuisController controller = Get.put(KuisController());
+
   @override
   Widget build(BuildContext context) {
     final w = MediaQuery.of(context).size.width;
@@ -48,9 +50,9 @@ class KuisView extends GetView<KuisController> {
                       actions: [
                         TextButton(
                           onPressed: () {
-                            // Jika user memilih "Yes", keluar dari kuis
                             controller.currentIndex.value = 0;
                             controller.score.value = 0;
+                            controller.onClose();
                             Get.back(); // Keluar dari modal
                             Get.back(); // Kembali ke halaman sebelumnya atau akhiri aplikasi
                           },
@@ -58,7 +60,6 @@ class KuisView extends GetView<KuisController> {
                         ),
                         TextButton(
                           onPressed: () {
-                            // Jika user memilih "No", lanjutkan mengerjakan kuis
                             Get.back(); // Keluar dari modal
                           },
                           child: Text('No'),

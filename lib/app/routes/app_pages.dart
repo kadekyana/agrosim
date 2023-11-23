@@ -114,7 +114,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.PENANAMAN_JERUK,
-      page: () => const PenanamanJerukView(),
+      page: () => PenanamanJerukView(),
       binding: PenanamanJerukBinding(),
     ),
     GetPage(

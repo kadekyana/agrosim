@@ -15,7 +15,7 @@ class AudioManager {
   bool get isPlaying => _isPlaying;
 
   void playMusic() {
-    _audioPlayer.open(Audio('images/tes.mp3'),
+    _audioPlayer.open(Audio('images/bs.mp3'),
         autoStart: true, loopMode: LoopMode.single);
     _isPlaying = true;
   }

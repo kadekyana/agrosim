@@ -66,7 +66,7 @@ class KnowledgeView extends GetView<KnowledgeController> {
                       },
                       child: Container(
                         width: w,
-                        height: h * 0.15,
+                        height: h * 0.155,
                         child: Card(
                           color: Color(0xffFF6000),
                           child: Row(
@@ -127,7 +127,7 @@ class KnowledgeView extends GetView<KnowledgeController> {
                       },
                       child: Container(
                         width: w,
-                        height: h * 0.15,
+                        height: h * 0.155,
                         child: Card(
                           color: Color(0xffEBC034),
                           child: Row(
@@ -188,7 +188,7 @@ class KnowledgeView extends GetView<KnowledgeController> {
                       },
                       child: Container(
                         width: w,
-                        height: h * 0.15,
+                        height: h * 0.155,
                         child: Card(
                           color: Color(0xff1E1E1E),
                           child: Row(

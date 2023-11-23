@@ -1,9 +1,32 @@
 import 'package:agrosim/app/modules/Kuis/views/question.dart';
 import 'package:agrosim/app/modules/Score/views/score_view.dart';
+import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:get/get.dart';
 
 class KuisController extends GetxController {
+  final AssetsAudioPlayer asset = AssetsAudioPlayer();
+  @override
+  void onInit() {
+    super.onInit();
+    asset.play();
+    asset.open(Audio('images/bgm.mp3'),
+        loopMode: LoopMode.single, autoStart: true);
+  }
+
+  @override
+  void onReady() {
+    super.onReady();
+    asset.play();
+  }
+
+  @override
+  void onClose() {
+    super.onClose();
+    asset.pause();
+  }
+
   var currentIndex = 0.obs;
+
   var score = 0.obs;
   bool cekJawaban(int index) {
     return index == question[currentIndex.value].correctIndex;
@@ -58,22 +81,8 @@ class KuisController extends GetxController {
       Get.to(ScoreView());
     }
 
-    final count = 0.obs;
-    @override
-    void onInit() {
-      super.onInit();
-    }
+    // final count = 0.obs;
 
-    @override
-    void onReady() {
-      super.onReady();
-    }
-
-    @override
-    void onClose() {
-      super.onClose();
-    }
-
-    void increment() => count.value++;
+    // void increment() => count.value++;
   }
 }

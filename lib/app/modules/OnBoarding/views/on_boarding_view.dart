@@ -1,6 +1,7 @@
 import 'package:agrosim/app/modules/BottomBar/views/bottom_bar_view.dart';
 import 'package:agrosim/app/modules/Home/views/home_view.dart';
 import 'package:agrosim/app/modules/OnBoarding/views/on_pages.dart';
+import 'package:agrosim/notif.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
@@ -16,13 +17,17 @@ class OnBoardingView extends StatefulWidget {
 
 class _OnBoardingViewState extends State<OnBoardingView> {
   final OnBoardingController controller = Get.put(OnBoardingController());
+  final NotificationService notificationService = NotificationService();
   int pageIndex = 0;
   late PageController _controller;
 
   @override
   void initState() {
-    _controller = PageController(initialPage: 0);
     super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      notificationService.showNotification(1, 'Testing', 'Ngetes Ajah');
+    });
+    _controller = PageController(initialPage: 0);
   }
 
   @override

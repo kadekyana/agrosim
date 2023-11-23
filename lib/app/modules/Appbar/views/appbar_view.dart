@@ -18,7 +18,6 @@ class AppbarView extends StatefulWidget implements PreferredSizeWidget {
 }
 
 class _AppbarViewState extends State<AppbarView> {
-  bool iconchange = false;
   @override
   Widget build(BuildContext context) {
     AudioManager audioManager = AudioManager();
@@ -33,16 +32,11 @@ class _AppbarViewState extends State<AppbarView> {
             onPressed: () {
               if (audioManager.isPlaying) {
                 audioManager.pauseMusic();
-                print('tes pause ${iconchange}');
               } else {
                 audioManager.playMusic();
-                setState(() {
-                  iconchange = !iconchange;
-                });
-                print('tes play ${iconchange}');
               }
             },
-            icon: iconchange
+            icon: audioManager.isPlaying
                 ? Icon(
                     Icons.volume_mute_outlined,
                     color: Color(0xffE53E34),
