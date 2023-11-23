@@ -10,18 +10,18 @@ class AudioManager {
   AudioManager._internal();
 
   final AssetsAudioPlayer _audioPlayer = AssetsAudioPlayer();
-  bool _isPlaying = false;
+  bool isPlaying = false;
 
-  bool get isPlaying => _isPlaying;
+  // bool get isPlaying => _isPlaying;
 
   void playMusic() {
     _audioPlayer.open(Audio('images/bs.mp3'),
         autoStart: true, loopMode: LoopMode.single);
-    _isPlaying = true;
+    isPlaying = true;
   }
 
   void pauseMusic() {
     _audioPlayer.pause();
-    _isPlaying = false;
+    isPlaying = false;
   }
 }

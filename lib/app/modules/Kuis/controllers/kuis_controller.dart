@@ -1,13 +1,16 @@
 import 'package:agrosim/app/modules/Kuis/views/question.dart';
 import 'package:agrosim/app/modules/Score/views/score_view.dart';
+import 'package:agrosim/app/widget/audioManager.dart';
 import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:get/get.dart';
 
 class KuisController extends GetxController {
   final AssetsAudioPlayer asset = AssetsAudioPlayer();
+  final AudioManager audioManager = AudioManager();
   @override
   void onInit() {
     super.onInit();
+    audioManager.pauseMusic();
     asset.play();
     asset.open(Audio('images/bgm.mp3'),
         loopMode: LoopMode.single, autoStart: true);
@@ -23,6 +26,7 @@ class KuisController extends GetxController {
   void onClose() {
     super.onClose();
     asset.pause();
+    Get.delete<KuisController>();
   }
 
   var currentIndex = 0.obs;

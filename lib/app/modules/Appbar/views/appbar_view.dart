@@ -36,15 +36,10 @@ class _AppbarViewState extends State<AppbarView> {
                 audioManager.playMusic();
               }
             },
-            icon: audioManager.isPlaying
-                ? Icon(
-                    Icons.volume_mute_outlined,
-                    color: Color(0xffE53E34),
-                  )
-                : Icon(
-                    Icons.volume_up_outlined,
-                    color: Color(0xffE53E34),
-                  ))
+            icon: Icon(
+              Icons.volume_up_outlined,
+              color: Color(0xffE53E34),
+            ))
       ],
       title: Text(
         'AGROSIM',

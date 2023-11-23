@@ -1,3 +1,5 @@
+import 'package:agrosim/app/modules/BottomBar/views/bottom_bar_view.dart';
+import 'package:agrosim/app/routes/app_pages.dart';
 import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:flutter/material.dart';
 
@@ -53,14 +55,14 @@ class KuisView extends GetView<KuisController> {
                             controller.currentIndex.value = 0;
                             controller.score.value = 0;
                             controller.onClose();
-                            Get.back(); // Keluar dari modal
-                            Get.back(); // Kembali ke halaman sebelumnya atau akhiri aplikasi
+                            Get.back();
+                            Get.back();
                           },
                           child: Text('Yes'),
                         ),
                         TextButton(
                           onPressed: () {
-                            Get.back(); // Keluar dari modal
+                            Get.back();
                           },
                           child: Text('No'),
                         ),
