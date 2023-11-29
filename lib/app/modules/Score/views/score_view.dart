@@ -35,6 +35,19 @@ class ScoreView extends GetView<ScoreController> {
                   fit: BoxFit.fill,
                 ),
               ),
+              Positioned.fill(
+                  bottom: 0,
+                  child: Container(
+                    child: Center(
+                      child: Text(
+                        'Ketuk Untuk Melihat Pembahasan KUIS',
+                        style: GoogleFonts.breeSerif(
+                            decoration: TextDecoration.none,
+                            color: Colors.white,
+                            fontSize: 15),
+                      ),
+                    ),
+                  )),
               // Menampilkan gambar bintang sesuai dengan level bintang
               Positioned(
                 bottom: 90,

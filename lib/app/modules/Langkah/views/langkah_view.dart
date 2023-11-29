@@ -8,7 +8,8 @@ import '../controllers/langkah_controller.dart';
 
 class LangkahView extends GetView<LangkahController> {
   LangkahView({Key? key}) : super(key: key);
-  List<String> items = [
+
+  List<String> langkah = [
     "Siapkan lahan yang akan untuk menanam jeruk",
     "Campur pupuk dengan tananh sebelum penanaman",
     "Pilih bibit jeruk yang akan ditanam lalu tanam",
@@ -16,6 +17,7 @@ class LangkahView extends GetView<LangkahController> {
     "Berikan perawatan dan obat 3 bulan sekali",
     "Setelah 1 tahun jeruk siap dipanen",
   ];
+
   @override
   Widget build(BuildContext context) {
     final w = MediaQuery.of(context).size.width;
@@ -24,6 +26,9 @@ class LangkahView extends GetView<LangkahController> {
       backgroundColor: Color(0xffEBE4D1),
       appBar: AppbarView(
         back: true,
+        data: () {
+          Get.back();
+        },
       ),
       body: SafeArea(
         child: Column(
@@ -45,11 +50,11 @@ class LangkahView extends GetView<LangkahController> {
               child: Column(
                 children: [
                   Container(
-                    width: w,
+                    width: w * 0.9,
                     height: h * 0.04,
                     child: FittedBox(
                       child: Text(
-                        'Langkah - Langkah',
+                        'Langkah - Langkah Penanaman Jeruk',
                         style: GoogleFonts.alfaSlabOne(),
                       ),
                     ),
@@ -59,11 +64,12 @@ class LangkahView extends GetView<LangkahController> {
                     width: w,
                     height: h * 0.4,
                     child: ListView.builder(
+                      physics: NeverScrollableScrollPhysics(),
                       itemCount: 6,
                       itemExtent: 40.0,
                       itemBuilder: (context, index) {
                         final item =
-                            (index + 1).toString() + ". " + items[index];
+                            (index + 1).toString() + ". " + langkah[index];
                         return ListTile(
                           title: Text(
                             item,

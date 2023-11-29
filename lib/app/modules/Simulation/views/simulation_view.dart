@@ -17,6 +17,9 @@ class SimulationView extends GetView<SimulationController> {
       backgroundColor: Color(0xffEBE4D1),
       appBar: AppbarView(
         back: true,
+        data: () {
+          Get.back();
+        },
       ),
       body: SafeArea(
         child: Column(
@@ -60,20 +63,28 @@ class SimulationView extends GetView<SimulationController> {
                 child: Container(
                   width: w,
                   height: h * 0.15,
-                  child: Stack(children: [
-                    Image.asset(
-                      'images/simulasi.png',
-                      fit: BoxFit.fill,
-                    ),
-                    Positioned(
-                        top: 20,
-                        left: 90,
+                  child: Stack(
+                    children: [
+                      Positioned.fill(
+                        child: Image.asset(
+                          'images/simulasi.png',
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                      Positioned(
+                        top: h * 0.02,
+                        left: w *
+                            0.23, // Sesuaikan dengan posisi horizontal yang diinginkan
                         child: Text(
                           'PLAY',
                           style: GoogleFonts.alfaSlabOne(
-                              fontSize: 60, color: Color(0xffE53E34)),
-                        ))
-                  ]),
+                            fontSize: 60,
+                            color: Color(0xffE53E34),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),

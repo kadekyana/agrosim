@@ -81,7 +81,7 @@ class KuisView extends GetView<KuisController> {
             top: 170,
             child: Container(
               width: w,
-              height: h * 0.75,
+              height: h,
               child: Obx(() {
                 var currentQuestion =
                     controller.question[controller.currentIndex.value];
@@ -123,7 +123,6 @@ class KuisView extends GetView<KuisController> {
                                   MaterialStateProperty.resolveWith<Color>(
                                       (Set<MaterialState> states) {
                                 if (states.contains(MaterialState.pressed)) {
-                                  // Warna saat tombol ditekan (bisa disesuaikan)
                                   return Color(0xffFF6000);
                                 }
                                 return Color(0xff898989);

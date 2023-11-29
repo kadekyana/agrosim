@@ -20,7 +20,7 @@ class PenanamanJerukController extends GetxController {
     super.onInit();
     audioManager.pauseMusic();
     asset.play();
-    asset.open(Audio('images/bgm.mp3'),
+    asset.open(Audio('images/simulasi.mp3'),
         loopMode: LoopMode.single, autoStart: true);
   }
 
@@ -32,8 +32,9 @@ class PenanamanJerukController extends GetxController {
 
   @override
   void onClose() {
-    super.onClose();
+    Get.delete<PenanamanJerukController>();
     asset.pause();
+    super.onClose();
   }
 
   void increment() => count.value++;

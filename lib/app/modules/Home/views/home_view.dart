@@ -18,6 +18,9 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
+  bool isTapped = false;
+  bool isTapped1 = false;
+  bool isTapped2 = false;
   @override
   Widget build(BuildContext context) {
     final w = MediaQuery.of(context).size.width;
@@ -26,6 +29,9 @@ class _HomeViewState extends State<HomeView> {
       backgroundColor: Color(0xffEBE4D1),
       appBar: AppbarView(
         back: false,
+        data: () {
+          Get.back();
+        },
       ),
       body: SafeArea(
         child: Column(
@@ -35,91 +41,124 @@ class _HomeViewState extends State<HomeView> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 GestureDetector(
-                  onTap: () {
-                    Get.to(KnowledgeView());
+                  onTapDown: (_) {
+                    setState(() {
+                      isTapped = true;
+                    });
                   },
-                  child: Container(
-                    width: w * 0.2,
-                    height: h * 0.15,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10)),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Image.asset('images/BOOK LOGO 1.png'),
-                        Container(
-                          width: w * 0.15,
-                          child: FittedBox(
-                            child: Text(
-                              'KNOWLEDGE',
-                              style: GoogleFonts.alfaSlabOne(
-                                  color: Color(0xffC6C6C6)),
+                  onTapUp: (_) {
+                    setState(() {
+                      isTapped = false;
+                    });
+                    Future.delayed(Duration(seconds: 1), () {
+                      Get.to(KnowledgeView());
+                    });
+                  },
+                  child: AnimatedContainer(
+                    duration: Duration(seconds: 1),
+                    width: isTapped ? w * 0.1 : w * 0.25,
+                    height: isTapped ? h * 0.05 : h * 0.2,
+                    child: Card(
+                      elevation: 10,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Image.asset('images/BOOK LOGO 1.png'),
+                          Container(
+                            width: w * 0.15,
+                            child: FittedBox(
+                              child: Text(
+                                'KNOWLEDGE',
+                                style: GoogleFonts.alfaSlabOne(
+                                    color: Color(0xffC6C6C6)),
+                              ),
                             ),
-                          ),
-                        )
-                      ],
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),
                 GestureDetector(
-                  onTap: () {
-                    Get.to(VideoView());
+                  onTapDown: (_) {
+                    setState(() {
+                      isTapped1 = true;
+                    });
                   },
-                  child: Container(
-                    width: w * 0.2,
-                    height: h * 0.15,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10)),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Image.asset('images/Animation Logo 1.png'),
-                        Container(
-                          width: w * 0.1,
-                          child: FittedBox(
-                            child: Text(
-                              'VIDEO',
-                              style: GoogleFonts.alfaSlabOne(
-                                  color: Color(0xffC6C6C6)),
+                  onTapUp: (_) {
+                    setState(() {
+                      isTapped1 = false;
+                    });
+                    Future.delayed(Duration(seconds: 1), () {
+                      Get.to(VideoView());
+                    });
+                  },
+                  child: AnimatedContainer(
+                    duration: Duration(seconds: 1),
+                    width: isTapped ? w * 0.1 : w * 0.25,
+                    height: isTapped ? h * 0.05 : h * 0.2,
+                    child: Card(
+                      elevation: 10,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Image.asset('images/Animation Logo 1.png'),
+                          Container(
+                            width: w * 0.15,
+                            child: FittedBox(
+                              child: Text(
+                                'VIDEO',
+                                style: GoogleFonts.alfaSlabOne(
+                                    color: Color(0xffC6C6C6)),
+                              ),
                             ),
-                          ),
-                        )
-                      ],
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),
                 GestureDetector(
-                  onTap: () {
-                    Get.to(SimulationView());
+                  onTapDown: (_) {
+                    setState(() {
+                      isTapped2 = true;
+                    });
                   },
-                  child: Container(
-                    width: w * 0.2,
-                    height: h * 0.15,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10)),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Image.asset('images/Animation Logo 1 (1).png'),
-                        Container(
-                          width: w * 0.15,
-                          child: FittedBox(
-                            child: Text(
-                              'SIMULATION',
-                              style: GoogleFonts.alfaSlabOne(
-                                  color: Color(0xffC6C6C6)),
+                  onTapUp: (_) {
+                    setState(() {
+                      isTapped2 = false;
+                    });
+                    Future.delayed(Duration(seconds: 1), () {
+                      Get.to(SimulationView());
+                    });
+                  },
+                  child: AnimatedContainer(
+                    duration: Duration(seconds: 1),
+                    width: isTapped ? w * 0.1 : w * 0.25,
+                    height: isTapped ? h * 0.05 : h * 0.2,
+                    child: Card(
+                      elevation: 10,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Image.asset('images/Animation Logo 1 (1).png'),
+                          Container(
+                            width: w * 0.15,
+                            child: FittedBox(
+                              child: Text(
+                                'SIMULATION',
+                                style: GoogleFonts.alfaSlabOne(
+                                    color: Color(0xffC6C6C6)),
+                              ),
                             ),
-                          ),
-                        )
-                      ],
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),
               ],
-            )
+            ),
           ],
         ),
       ),

@@ -18,6 +18,9 @@ class StatisticView extends GetView<StatisticController> {
       backgroundColor: Color(0xffEBE4D1),
       appBar: AppbarView(
         back: false,
+        data: () {
+          Get.back();
+        },
       ),
       body: SafeArea(
         child: SingleChildScrollView(

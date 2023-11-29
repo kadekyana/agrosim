@@ -12,7 +12,7 @@ class KuisController extends GetxController {
     super.onInit();
     audioManager.pauseMusic();
     asset.play();
-    asset.open(Audio('images/bgm.mp3'),
+    asset.open(Audio('images/kuis.mp3'),
         loopMode: LoopMode.single, autoStart: true);
   }
 
@@ -38,36 +38,45 @@ class KuisController extends GetxController {
 
   var question = <Question>[
     Question(
-        text: 'Apa komponen yang diperlukan dalam penanaman jeruk, kecuali ?',
-        options: ['Sabit', 'Cangkul', 'Bibit Jeruk', 'Obat Jeruk'],
-        correctIndex: 0,
-        explanation:
-            '1. Jawaban Benar : Sabit - Karena sabit tidak digunakan dalam proses penanaman tanaman jeruk'),
-    Question(
-        text:
-            'Setelah mencangkul apa komponen yang diperlukan dalam penanaman jeruk ?',
-        options: ['Sabit', 'Cangkul', 'Bibit Jeruk', 'Obat Jeruk'],
+        text: 'Dibawah ini, yang merupakan nama latin dari jeruk siam adalah ?',
+        options: [
+          'Citrus sinensis L',
+          'Citrus reticulata',
+          'Citrus nobilis',
+          'Citrus limon Linn'
+        ],
         correctIndex: 2,
         explanation:
-            '1. Jawaban Benar : Sabit - Karena sabit tidak digunakan dalam proses penanaman tanaman jeruk'),
+            '1. Nama latin dari jeruk siam adalah Citrus nobilis. Citrus sinensis (a) lebih dikenal sebagai jeruk manis, Citrus reticulata (b) umumnya merujuk pada jeruk mandarin, dan Citrus limon (d) adalah jeruk lemon.'),
     Question(
-        text: 'Apa komponen yang diperlukan dalam pembuahan jeruk ?',
-        options: ['Sabit', 'Cangkul', 'Bibit Jeruk', 'Obat Jeruk'],
+        text: 'Syarat budidaya tanaman jeruk adalah ?',
+        options: ['Iklim', 'Bibit', 'Hujan', 'Petani'],
+        correctIndex: 0,
+        explanation:
+            '2. Iklim: Tanaman jeruk biasanya tumbuh baik di iklim subtropis hingga tropis. Iklim yang hangat dan sedikit sejuk dengan musim hujan yang teratur cenderung mendukung pertumbuhan yang baik.'),
+    Question(
+        text: 'Alat untuk menanam jeruk adalah ?',
+        options: ['Sabit', 'Tanah', 'Bibit Jeruk', 'Cangkul'],
         correctIndex: 3,
         explanation:
-            '1. Jawaban Benar : Sabit - Karena sabit tidak digunakan dalam proses penanaman tanaman jeruk'),
+            '3. Cangkul: Alat ini digunakan untuk menggali tanah, persiapan tempat tanam, dan pemeliharaan tanah di sekitar tanaman.'),
     Question(
-        text: 'Apa komponen yang diperlukan dalam penanaman jeruk ?',
-        options: ['Sabit', 'Cangkul', 'Bibit Jeruk', 'Obat Jeruk'],
+        text: 'Apa yang dilakukan jika tanaman terkena hama ?',
+        options: [
+          'Siram Dengan Air',
+          'Memberi Pestisida',
+          'Memberi Pupuk',
+          'Mematikan Pohon'
+        ],
         correctIndex: 1,
         explanation:
-            '1. Jawaban Benar : Sabit - Karena sabit tidak digunakan dalam proses penanaman tanaman jeruk'),
+            '4. Memberikan Pestisida: Pestisida digunakan untuk mengendalikan atau menghilangkan hama yang dapat merusak tanaman.'),
     Question(
-        text: 'Apa saja kandungan yang terdapat dalam jeruk ?',
-        options: ['Semua Salah', 'Vitamin C', 'Semua Benar', 'Pestisida'],
+        text: 'Jeruk kaya akan vitamin ?',
+        options: ['Zat Besi', 'Vitamin C', 'Vitamin D', 'Kalsium'],
         correctIndex: 1,
         explanation:
-            '1. Jawaban Benar : Sabit - Karena sabit tidak digunakan dalam proses penanaman tanaman jeruk'),
+            'Vitamin C: Jeruk dikenal kaya akan vitamin C, yang merupakan nutrisi penting untuk kesehatan tubuh manusia.'),
   ].obs;
 
   void answerQuestion(int selectedIndex) {

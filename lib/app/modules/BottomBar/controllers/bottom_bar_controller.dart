@@ -1,7 +1,9 @@
+import 'package:agrosim/app/widget/audioManager.dart';
 import 'package:get/get.dart';
 
 class BottomBarController extends GetxController {
   //TODO: Implement BottomBarController
+  final AudioManager audioManager = AudioManager();
 
   final count = 0.obs;
   @override
@@ -11,6 +13,7 @@ class BottomBarController extends GetxController {
 
   @override
   void onReady() {
+    audioManager.playMusic();
     super.onReady();
   }
 

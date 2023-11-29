@@ -18,6 +18,9 @@ class KnowledgeView extends GetView<KnowledgeController> {
       backgroundColor: Color(0xffEBE4D1),
       appBar: AppbarView(
         back: true,
+        data: () {
+          Get.back();
+        },
       ),
       body: SafeArea(
         child: Column(
@@ -66,37 +69,40 @@ class KnowledgeView extends GetView<KnowledgeController> {
                       },
                       child: Container(
                         width: w,
-                        height: h * 0.155,
+                        height: h * 0.17,
                         child: Card(
+                          elevation: 10,
                           color: Color(0xffFF6000),
                           child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Container(
-                                  padding: EdgeInsets.all(20),
+                                  padding: EdgeInsets.only(top: 20, left: 20),
                                   width: w * 0.6,
                                   child: Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
                                       Container(
-                                        width: w * 0.5,
-                                        height: h * 0.03,
-                                        child: Text(
-                                          'Pengertian',
-                                          style: GoogleFonts.alfaSlabOne(
-                                              color: Colors.white,
-                                              fontSize: 20),
+                                        width: w * 0.3,
+                                        child: FittedBox(
+                                          child: Text(
+                                            'Tentang Jeruk',
+                                            style: GoogleFonts.alfaSlabOne(
+                                                color: Colors.white,
+                                                fontSize: 20),
+                                          ),
                                         ),
                                       ),
                                       Container(
                                         width: w * 0.5,
-                                        height: h * 0.02,
-                                        child: Text(
-                                          'Pohon jeruk adalah pohon yang selalu berdaun hijau dengan umur produktif 50-60 tahun.',
-                                          overflow: TextOverflow.ellipsis,
-                                          style: GoogleFonts.breeSerif(
-                                              color: Color(0xffC6C6C6)),
+                                        child: FittedBox(
+                                          child: Text(
+                                            'Pengertian, Jenis dan Manfaat',
+                                            overflow: TextOverflow.ellipsis,
+                                            style: GoogleFonts.breeSerif(
+                                                color: Colors.white),
+                                          ),
                                         ),
                                       ),
                                       SizedBox(
@@ -127,37 +133,40 @@ class KnowledgeView extends GetView<KnowledgeController> {
                       },
                       child: Container(
                         width: w,
-                        height: h * 0.155,
+                        height: h * 0.17,
                         child: Card(
+                          elevation: 10,
                           color: Color(0xffEBC034),
                           child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Container(
-                                  padding: EdgeInsets.all(20),
+                                  padding: EdgeInsets.only(top: 20, left: 20),
                                   width: w * 0.6,
                                   child: Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
                                       Container(
-                                        width: w * 0.5,
-                                        height: h * 0.03,
-                                        child: Text(
-                                          'Komponen',
-                                          style: GoogleFonts.alfaSlabOne(
-                                              color: Colors.white,
-                                              fontSize: 20),
+                                        width: w * 0.3,
+                                        child: FittedBox(
+                                          child: Text(
+                                            'Budidaya Jeruk',
+                                            style: GoogleFonts.alfaSlabOne(
+                                                color: Colors.white,
+                                                fontSize: 20),
+                                          ),
                                         ),
                                       ),
                                       Container(
                                         width: w * 0.5,
-                                        height: h * 0.02,
-                                        child: Text(
-                                          '1. Bibit',
-                                          overflow: TextOverflow.ellipsis,
-                                          style: GoogleFonts.breeSerif(
-                                              color: Colors.white),
+                                        child: FittedBox(
+                                          child: Text(
+                                            'Alat, Budidaya dan Tata Cara',
+                                            overflow: TextOverflow.ellipsis,
+                                            style: GoogleFonts.breeSerif(
+                                                color: Colors.white),
+                                          ),
                                         ),
                                       ),
                                       SizedBox(
@@ -188,37 +197,40 @@ class KnowledgeView extends GetView<KnowledgeController> {
                       },
                       child: Container(
                         width: w,
-                        height: h * 0.155,
+                        height: h * 0.17,
                         child: Card(
+                          elevation: 10,
                           color: Color(0xff1E1E1E),
                           child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Container(
-                                  padding: EdgeInsets.all(20),
+                                  padding: EdgeInsets.only(top: 20, left: 20),
                                   width: w * 0.6,
                                   child: Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
                                       Container(
-                                        width: w * 0.5,
-                                        height: h * 0.03,
-                                        child: Text(
-                                          'Langkah - Langkah',
-                                          style: GoogleFonts.alfaSlabOne(
-                                              color: Colors.white,
-                                              fontSize: 20),
+                                        width: w * 0.3,
+                                        child: FittedBox(
+                                          child: Text(
+                                            'Penanaman Jeruk',
+                                            style: GoogleFonts.alfaSlabOne(
+                                                color: Colors.white,
+                                                fontSize: 20),
+                                          ),
                                         ),
                                       ),
                                       Container(
                                         width: w * 0.5,
-                                        height: h * 0.02,
-                                        child: Text(
-                                          'Siapkan lahan yang akan untuk menanam jeruk Campur pupuk dengan',
-                                          overflow: TextOverflow.ellipsis,
-                                          style: GoogleFonts.breeSerif(
-                                              color: Color(0xffC6C6C6)),
+                                        child: FittedBox(
+                                          child: Text(
+                                            'Langkah - Langkah Menanam jeruk',
+                                            overflow: TextOverflow.ellipsis,
+                                            style: GoogleFonts.breeSerif(
+                                                color: Colors.white),
+                                          ),
                                         ),
                                       ),
                                       SizedBox(
@@ -242,7 +254,7 @@ class KnowledgeView extends GetView<KnowledgeController> {
                               ]),
                         ),
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),

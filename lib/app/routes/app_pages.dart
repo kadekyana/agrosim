@@ -102,6 +102,7 @@ class AppPages {
       name: _Paths.APPBAR,
       page: () => AppbarView(
         back: false,
+        data: () {},
       ),
       binding: AppbarBinding(),
     ),

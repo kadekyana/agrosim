@@ -17,16 +17,16 @@ class OnBoardingView extends StatefulWidget {
 
 class _OnBoardingViewState extends State<OnBoardingView> {
   final OnBoardingController controller = Get.put(OnBoardingController());
-  final NotificationService notificationService = NotificationService();
+  // final NotificationService notificationService = NotificationService();
   int pageIndex = 0;
   late PageController _controller;
 
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      notificationService.showNotification(1, 'Testing', 'Ngetes Ajah');
-    });
+    // WidgetsBinding.instance.addPostFrameCallback((_) {
+    //   notificationService.showNotification(1, 'Testing', 'Ngetes Ajah');
+    // });
     _controller = PageController(initialPage: 0);
   }
 
