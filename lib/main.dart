@@ -8,20 +8,20 @@ import 'package:permission_handler/permission_handler.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // NotificationService notificationService = NotificationService();
-  // await _requestNotificationPermission();
+  NotificationService notificationService = NotificationService();
+  await _requestNotificationPermission();
   await inisialisasiDatabase();
-  // await notificationService.initializeNotification();
+  await notificationService.initializeNotification();
   runApp(const MyApp());
 }
 
-// Future<void> _requestNotificationPermission() async {
-//   var status = await Permission.notification.status;
+Future<void> _requestNotificationPermission() async {
+  var status = await Permission.notification.status;
 
-//   if (!status.isGranted) {
-//     await Permission.notification.request();
-//   }
-// }
+  if (!status.isGranted) {
+    await Permission.notification.request();
+  }
+}
 
 Future<void> inisialisasiDatabase() async {
   final db = await SQLHelper.db();

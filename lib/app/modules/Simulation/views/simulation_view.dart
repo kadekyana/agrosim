@@ -28,28 +28,33 @@ class SimulationView extends GetView<SimulationController> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Container(
-                  width: w * 0.2,
-                  height: h * 0.15,
-                  decoration: BoxDecoration(
-                      color: Color(0xffEBC034),
-                      borderRadius: BorderRadius.circular(10)),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Image.asset(
-                        'images/Animation Logo 1 (1).png',
-                      ),
-                      Container(
-                        width: w * 0.15,
-                        child: FittedBox(
-                          child: Text(
-                            'SIMULATION',
-                            style: GoogleFonts.alfaSlabOne(color: Colors.white),
-                          ),
+                Card(
+                  elevation: 10,
+                  color: Colors.transparent,
+                  child: Container(
+                    width: w * 0.2,
+                    height: h * 0.15,
+                    decoration: BoxDecoration(
+                        color: Color(0xffEBC034),
+                        borderRadius: BorderRadius.circular(10)),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Image.asset(
+                          'images/Animation Logo 1 (1).png',
                         ),
-                      )
-                    ],
+                        Container(
+                          width: w * 0.15,
+                          child: FittedBox(
+                            child: Text(
+                              'SIMULATION',
+                              style:
+                                  GoogleFonts.alfaSlabOne(color: Colors.white),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ],
@@ -71,10 +76,9 @@ class SimulationView extends GetView<SimulationController> {
                           fit: BoxFit.fill,
                         ),
                       ),
-                      Positioned(
-                        top: h * 0.02,
-                        left: w *
-                            0.23, // Sesuaikan dengan posisi horizontal yang diinginkan
+                      Positioned.fill(
+                        top: h * 0.04,
+                        left: w * 0.25,
                         child: Text(
                           'PLAY',
                           style: GoogleFonts.alfaSlabOne(

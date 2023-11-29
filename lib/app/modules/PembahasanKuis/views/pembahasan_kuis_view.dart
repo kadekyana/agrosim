@@ -1,6 +1,7 @@
 import 'package:agrosim/app/modules/BottomBar/views/bottom_bar_view.dart';
 import 'package:agrosim/app/modules/Kuis/controllers/kuis_controller.dart';
 import 'package:agrosim/app/modules/Kuis/views/question.dart';
+import 'package:agrosim/notif.dart';
 import 'package:agrosim/sql_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -12,6 +13,7 @@ class PembahasanKuisView extends GetView<PembahasanKuisController> {
   PembahasanKuisView({Key? key, required this.questions}) : super(key: key);
   final List<Question> questions;
   final KuisController kuisController = Get.find();
+  final NotificationService notificationService = NotificationService();
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +50,11 @@ class PembahasanKuisView extends GetView<PembahasanKuisController> {
                     kuisController.currentIndex.value = 0;
                     kuisController.score.value = 0;
                     kuisController.onClose();
-                    Get.snackbar('Success', 'Berhasil Simpan Score');
+                    // Get.snackbar('Success', 'Berhasil Simpan Score');
+                    WidgetsBinding.instance.addPostFrameCallback((_) {
+                      notificationService.showNotification(
+                          1, 'Berhasil', 'Untuk Simpan Score');
+                    });
                     Get.to(BottomBarView());
                   });
                 },

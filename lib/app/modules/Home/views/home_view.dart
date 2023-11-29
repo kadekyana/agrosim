@@ -18,9 +18,9 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-  bool isTapped = false;
-  bool isTapped1 = false;
-  bool isTapped2 = false;
+  bool TapKnow = false;
+  bool TapVid = false;
+  bool TapSimu = false;
   @override
   Widget build(BuildContext context) {
     final w = MediaQuery.of(context).size.width;
@@ -43,12 +43,14 @@ class _HomeViewState extends State<HomeView> {
                 GestureDetector(
                   onTapDown: (_) {
                     setState(() {
-                      isTapped = true;
+                      TapKnow = true;
                     });
                   },
                   onTapUp: (_) {
-                    setState(() {
-                      isTapped = false;
+                    Future.delayed(Duration(milliseconds: 500), () {
+                      setState(() {
+                        TapKnow = false;
+                      });
                     });
                     Future.delayed(Duration(seconds: 1), () {
                       Get.to(KnowledgeView());
@@ -56,21 +58,25 @@ class _HomeViewState extends State<HomeView> {
                   },
                   child: AnimatedContainer(
                     duration: Duration(seconds: 1),
-                    width: isTapped ? w * 0.1 : w * 0.25,
-                    height: isTapped ? h * 0.05 : h * 0.2,
+                    width: TapKnow ? w * 0.5 : w * 0.25,
+                    height: h * 0.2,
                     child: Card(
                       elevation: 10,
+                      color: TapKnow ? Color(0xffEBC034) : Colors.white,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Image.asset('images/BOOK LOGO 1.png'),
+                          Image.asset('images/BOOK LOGO 1.png',
+                              color: TapKnow ? Colors.white : null),
                           Container(
-                            width: w * 0.15,
+                            width: w * 0.2,
                             child: FittedBox(
                               child: Text(
                                 'KNOWLEDGE',
                                 style: GoogleFonts.alfaSlabOne(
-                                    color: Color(0xffC6C6C6)),
+                                    color: TapKnow
+                                        ? Colors.white
+                                        : Color(0xffC6C6C6)),
                               ),
                             ),
                           )
@@ -82,12 +88,14 @@ class _HomeViewState extends State<HomeView> {
                 GestureDetector(
                   onTapDown: (_) {
                     setState(() {
-                      isTapped1 = true;
+                      TapVid = true;
                     });
                   },
                   onTapUp: (_) {
-                    setState(() {
-                      isTapped1 = false;
+                    Future.delayed(Duration(milliseconds: 500), () {
+                      setState(() {
+                        TapVid = false;
+                      });
                     });
                     Future.delayed(Duration(seconds: 1), () {
                       Get.to(VideoView());
@@ -95,21 +103,27 @@ class _HomeViewState extends State<HomeView> {
                   },
                   child: AnimatedContainer(
                     duration: Duration(seconds: 1),
-                    width: isTapped ? w * 0.1 : w * 0.25,
-                    height: isTapped ? h * 0.05 : h * 0.2,
+                    width: TapVid ? w * 0.5 : w * 0.25,
+                    height: h * 0.2,
                     child: Card(
                       elevation: 10,
+                      color: TapVid ? Color(0xffEBC034) : Colors.white,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Image.asset('images/Animation Logo 1.png'),
+                          Image.asset(
+                            'images/Animation Logo 1.png',
+                            color: TapVid ? Colors.white : null,
+                          ),
                           Container(
-                            width: w * 0.15,
+                            width: w * 0.2,
                             child: FittedBox(
                               child: Text(
                                 'VIDEO',
                                 style: GoogleFonts.alfaSlabOne(
-                                    color: Color(0xffC6C6C6)),
+                                    color: TapVid
+                                        ? Colors.white
+                                        : Color(0xffC6C6C6)),
                               ),
                             ),
                           )
@@ -121,12 +135,14 @@ class _HomeViewState extends State<HomeView> {
                 GestureDetector(
                   onTapDown: (_) {
                     setState(() {
-                      isTapped2 = true;
+                      TapSimu = true;
                     });
                   },
                   onTapUp: (_) {
-                    setState(() {
-                      isTapped2 = false;
+                    Future.delayed(Duration(milliseconds: 500), () {
+                      setState(() {
+                        TapSimu = false;
+                      });
                     });
                     Future.delayed(Duration(seconds: 1), () {
                       Get.to(SimulationView());
@@ -134,21 +150,26 @@ class _HomeViewState extends State<HomeView> {
                   },
                   child: AnimatedContainer(
                     duration: Duration(seconds: 1),
-                    width: isTapped ? w * 0.1 : w * 0.25,
-                    height: isTapped ? h * 0.05 : h * 0.2,
+                    width: TapSimu ? w * 0.5 : w * 0.25,
+                    height: h * 0.2,
                     child: Card(
                       elevation: 10,
+                      color: TapSimu ? Color(0xffEBC034) : Colors.white,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Image.asset('images/Animation Logo 1 (1).png'),
+                          Image.asset(
+                            'images/Animation Logo 1 (1).png',
+                          ),
                           Container(
-                            width: w * 0.15,
+                            width: w * 0.2,
                             child: FittedBox(
                               child: Text(
                                 'SIMULATION',
                                 style: GoogleFonts.alfaSlabOne(
-                                    color: Color(0xffC6C6C6)),
+                                    color: TapSimu
+                                        ? Colors.white
+                                        : Color(0xffC6C6C6)),
                               ),
                             ),
                           )

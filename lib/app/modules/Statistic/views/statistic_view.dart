@@ -1,4 +1,5 @@
 import 'package:agrosim/app/modules/Appbar/views/appbar_view.dart';
+import 'package:agrosim/app/modules/BottomBar/views/bottom_bar_view.dart';
 import 'package:agrosim/app/modules/Kuis/controllers/kuis_controller.dart';
 import 'package:agrosim/sql_helper.dart';
 import 'package:flutter/material.dart';
@@ -17,9 +18,9 @@ class StatisticView extends GetView<StatisticController> {
     return Scaffold(
       backgroundColor: Color(0xffEBE4D1),
       appBar: AppbarView(
-        back: false,
+        back: true,
         data: () {
-          Get.back();
+          Get.to(BottomBarView());
         },
       ),
       body: SafeArea(

@@ -29,29 +29,34 @@ class KnowledgeView extends GetView<KnowledgeController> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Container(
-                  width: w * 0.2,
-                  height: h * 0.15,
-                  decoration: BoxDecoration(
-                      color: Color(0xffEBC034),
-                      borderRadius: BorderRadius.circular(10)),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Image.asset(
-                        'images/BOOK LOGO 1.png',
-                        color: Colors.white,
-                      ),
-                      Container(
-                        width: w * 0.15,
-                        child: FittedBox(
-                          child: Text(
-                            'KNOWLEDGE',
-                            style: GoogleFonts.alfaSlabOne(color: Colors.white),
-                          ),
+                Card(
+                  elevation: 10,
+                  color: Colors.transparent,
+                  child: Container(
+                    width: w * 0.2,
+                    height: h * 0.15,
+                    decoration: BoxDecoration(
+                        color: Color(0xffEBC034),
+                        borderRadius: BorderRadius.circular(10)),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Image.asset(
+                          'images/BOOK LOGO 1.png',
+                          color: Colors.white,
                         ),
-                      )
-                    ],
+                        Container(
+                          width: w * 0.15,
+                          child: FittedBox(
+                            child: Text(
+                              'KNOWLEDGE',
+                              style:
+                                  GoogleFonts.alfaSlabOne(color: Colors.white),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ],
