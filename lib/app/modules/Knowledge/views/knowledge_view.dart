@@ -2,6 +2,7 @@ import 'package:agrosim/app/modules/Appbar/views/appbar_view.dart';
 import 'package:agrosim/app/modules/Komponen/views/komponen_view.dart';
 import 'package:agrosim/app/modules/Langkah/views/langkah_view.dart';
 import 'package:agrosim/app/modules/Pengertian/views/pengertian_view.dart';
+import 'package:agrosim/app/modules/ViewPdf/views/view_pdf_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -70,7 +71,10 @@ class KnowledgeView extends GetView<KnowledgeController> {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        Get.to(PengertianView());
+                        // Get.to(PengertianView());
+                        Get.to(ViewPdfView(
+                            file:
+                                'https://wiwindendriani.000webhostapp.com/materi/pengertian.pdf'));
                       },
                       child: Container(
                         width: w,
@@ -134,7 +138,10 @@ class KnowledgeView extends GetView<KnowledgeController> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        Get.to(KomponenView());
+                        Get.to(ViewPdfView(
+                          file:
+                              'https://wiwindendriani.000webhostapp.com/materi/ide.pdf',
+                        ));
                       },
                       child: Container(
                         width: w,

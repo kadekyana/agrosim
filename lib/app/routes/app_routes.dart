@@ -20,6 +20,7 @@ abstract class Routes {
   static const KUIS = _Paths.KUIS;
   static const SCORE = _Paths.SCORE;
   static const PEMBAHASAN_KUIS = _Paths.PEMBAHASAN_KUIS;
+  static const VIEW_PDF = _Paths.VIEW_PDF;
 }
 
 abstract class _Paths {
@@ -41,4 +42,5 @@ abstract class _Paths {
   static const KUIS = '/kuis';
   static const SCORE = '/score';
   static const PEMBAHASAN_KUIS = '/pembahasan-kuis';
+  static const VIEW_PDF = '/view-pdf';
 }

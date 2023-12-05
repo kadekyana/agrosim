@@ -34,6 +34,8 @@ import '../modules/Video/bindings/video_binding.dart';
 import '../modules/Video/views/video_view.dart';
 import '../modules/VideoPlayer/bindings/video_player_binding.dart';
 import '../modules/VideoPlayer/views/video_player_view.dart';
+import '../modules/ViewPdf/bindings/view_pdf_binding.dart';
+import '../modules/ViewPdf/views/view_pdf_view.dart';
 
 part 'app_routes.dart';
 
@@ -134,6 +136,13 @@ class AppPages {
         questions: [],
       ),
       binding: PembahasanKuisBinding(),
+    ),
+    GetPage(
+      name: _Paths.VIEW_PDF,
+      page: () => ViewPdfView(
+        file: '',
+      ),
+      binding: ViewPdfBinding(),
     ),
   ];
 }

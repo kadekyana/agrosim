@@ -46,6 +46,11 @@ dependencies:
   permission_handler: ^11.0.1
   lottie: ^2.7.0
   flutter_launcher_icons: ^0.13.1
+  path_provider: ^2.1.1
+  file_picker: ^6.1.1
+  syncfusion_flutter_pdfviewer: ^23.1.39
+  flutter_cache_manager: ^3.3.1
+  dio: ^5.4.0
   # flutter_background_service: ^5.0.4
 
 dev_dependencies:
@@ -80,6 +85,7 @@ flutter:
     - images/
     - images/video/
     - images/simulasi/
+    - images/materi/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

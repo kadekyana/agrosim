@@ -16,10 +16,12 @@ void main() async {
 }
 
 Future<void> _requestNotificationPermission() async {
-  var status = await Permission.notification.status;
+  var notif = await Permission.notification.status;
+  var download = await Permission.storage.status;
 
-  if (!status.isGranted) {
+  if (!notif.isGranted && !download.isGranted) {
     await Permission.notification.request();
+    await Permission.storage.request();
   }
 }
 

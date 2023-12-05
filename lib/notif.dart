@@ -11,7 +11,7 @@ class NotificationService {
 
   Future<void> initializeNotification() async {
     const AndroidInitializationSettings initializationSettingsAndroid =
-        AndroidInitializationSettings('@mipmap/ic_launcher');
+        AndroidInitializationSettings('@mipmap/launcher_icon');
     const DarwinInitializationSettings darwinInitializationSettings =
         DarwinInitializationSettings(
       requestAlertPermission: false,
@@ -51,6 +51,27 @@ class NotificationService {
       body,
       notificationDetails,
       payload: 'item x',
+    );
+  }
+
+  Future<void> showNotificationDownload(
+    int id,
+    String title,
+    String body,
+  ) async {
+    const AndroidNotificationDetails androidNotificationDetails =
+        AndroidNotificationDetails('2', 'Download',
+            channelDescription: 'Notif Khusus Download',
+            importance: Importance.max,
+            priority: Priority.high,
+            ticker: 'ticker');
+    const NotificationDetails notificationDetails =
+        NotificationDetails(android: androidNotificationDetails);
+    await flutterLocalNotificationsPlugin.show(
+      1,
+      title,
+      body,
+      notificationDetails,
     );
   }
 }
